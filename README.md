@@ -10,8 +10,12 @@ These are some rough scripts that analyze the output `instrumentation.*.json` fi
 
 ## The Goal
 
-Make this as simple to use as possible. The interface should be:
+Make this as simple to use as possible. The interface should be something like:
 
-`./ember-build-diff <SHA> [extra ember options]`
+`./ember-build-diff <SHA> [extra ember options]` (assume diff with previous commit)
 
-And that's it - this will automatically run a build for that commit and the commit before it (forwarding any extra options to ember, if you need that). Then it will process the generated files and produce a nice graph/table/image/somethingTBD that shows the changes between those 2 builds.
+or
+
+`./ember-build-diff <SHA1> <SHA2> [extra ember options]`
+
+And that's it - this will automatically run a build for each commit (forwarding any extra options to ember, if you need that). Then it will process the generated files and produce a nice graph/table/image/TBD that shows the changes between those 2 builds.
